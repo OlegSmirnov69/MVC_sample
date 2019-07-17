@@ -1,0 +1,24 @@
+﻿@using Shop1.Data.Models;
+@model IEnumerable<Item>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowList</title>
+</head>
+<body>
+
+    @{
+        foreach (var item in Model){
+            <div>
+                    <h2>Name: @item.name</h2>
+                    <p>Price: @item.price.ToString("c")</p>
+            </div>
+
+        }
+     }
+
+</body>
+</html>
