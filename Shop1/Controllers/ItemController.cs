@@ -23,6 +23,7 @@ namespace Shop1.Controllers
             //оголошуєммо змінну і присвоюємо їй результат фунції по отримання всіх ітемів
             var items = _items.GetAllItems;
             return View(items);
+            
         }
     }
 }

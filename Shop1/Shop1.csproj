@@ -14,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ViewModels\Shared\" />
     <Folder Include="Views\Category\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
 
 </Project>
