@@ -21,11 +21,12 @@ namespace Shop1.Controllers
 
         public ViewResult ShowList()
         {
-
+            ViewBag.Title = "Items List";
             //оголошуєммо змінну і присвоюємо їй результат фунції по отримання всіх ітемів
             ItemsListViewModel allitems = new ItemsListViewModel();
             allitems.getallItems = _items.GetAllItems;
             allitems.currentCategory = Convert.ToString(_categories.GetAllCategories.First());
+
             return View(allitems);
             
         }
