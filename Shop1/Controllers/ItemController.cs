@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Shop1.Data.Interfaces;
+using Shop1.ViewModels;
 
 namespace Shop1.Controllers
 {
@@ -20,9 +21,12 @@ namespace Shop1.Controllers
 
         public ViewResult ShowList()
         {
+
             //оголошуєммо змінну і присвоюємо їй результат фунції по отримання всіх ітемів
-            var items = _items.GetAllItems;
-            return View(items);
+            ItemsListViewModel allitems = new ItemsListViewModel();
+            allitems.getallItems = _items.GetAllItems;
+            allitems.currentCategory = Convert.ToString(_categories.GetAllCategories.First());
+            return View(allitems);
             
         }
     }

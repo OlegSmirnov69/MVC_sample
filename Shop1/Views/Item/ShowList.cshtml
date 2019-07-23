@@ -1,17 +1,7 @@
-﻿@using Shop1.Data.Models;
-@model IEnumerable<Item>
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>ShowList</title>
-</head>
-<body>
+﻿    <h2>@Model.currentCategory</h2>
 
     @{
-        foreach (var item in Model){
+        foreach (var item in Model.getallItems){
             <div>
                     <h2>Name: @item.name</h2>
                     <p>Price: @item.price.ToString("c")</p>
@@ -20,5 +10,3 @@
         }
      }
 
-</body>
-</html>

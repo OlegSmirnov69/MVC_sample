@@ -13056,11 +13056,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\DEV\\sharp\\mvc_sample\\Shop1\\Shop1.csproj",
+      "projectUniqueName": "D:\\DEV\\sharp\\mvc_sample\\Shop1\\Shop1.csproj",
       "projectName": "Shop1",
-      "projectPath": "d:\\DEV\\sharp\\mvc_sample\\Shop1\\Shop1.csproj",
+      "projectPath": "D:\\DEV\\sharp\\mvc_sample\\Shop1\\Shop1.csproj",
       "packagesPath": "C:\\Users\\burp\\.nuget\\packages\\",
-      "outputPath": "d:\\DEV\\sharp\\mvc_sample\\Shop1\\obj\\",
+      "outputPath": "D:\\DEV\\sharp\\mvc_sample\\Shop1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

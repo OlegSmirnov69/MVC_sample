@@ -14,7 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\Shared\" />
     <Folder Include="Views\Category\" />
   </ItemGroup>
 
