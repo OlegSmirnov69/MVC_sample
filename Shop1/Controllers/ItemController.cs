@@ -25,7 +25,7 @@ namespace Shop1.Controllers
             //оголошуєммо змінну і присвоюємо їй результат фунції по отримання всіх ітемів
             ItemsListViewModel allitems = new ItemsListViewModel();
             allitems.getallItems = _items.GetAllItems;
-            allitems.currentCategory = Convert.ToString(_categories.GetAllCategories.First());
+            //allitems.currentCategory = Convert.ToString(_categories.GetAllCategories.First());
 
             return View(allitems);
             

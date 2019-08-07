@@ -9,7 +9,7 @@ namespace Shop1.Data.Interfaces
     public interface IItems
     {
         IEnumerable<Item> GetAllItems { get;}
-        IEnumerable<Item> GetTopItems { get; set; }
+        IEnumerable<Item> GetTopItems { get; }
         Item getItem(int item_id);
     }
 }
