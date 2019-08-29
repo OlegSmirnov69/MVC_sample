@@ -1,0 +1,13 @@
+﻿@model HomeViewModel
+
+    <div class="row mt-5 mb-2">
+
+        @{
+        foreach (Item item in Model.topItems)
+        {
+            @Html.Partial("AllItems", item)
+
+        }
+        }
+
+    </div>

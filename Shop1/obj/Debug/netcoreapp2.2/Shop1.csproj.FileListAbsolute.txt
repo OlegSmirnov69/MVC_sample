@@ -46,3 +46,7 @@ D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Shop1.csproj.CopyComplete
 D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
 D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
 D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
+D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Shop1.csprojAssemblyReference.cache
+D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Shared\AllItems.g.cshtml.cs
+D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Cart\Index.g.cshtml.cs
+D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs

@@ -1,0 +1,9 @@
+﻿@model Item
+
+<div class="col-lg-4">
+    <img class="img-thumbnail" src="@Model.img" alt="@Model.name" />
+    <h2>Name: @Model.name</h2>
+    <p>@Model.shortDesc</p>
+    <p>Price: @Model.price.ToString("C", new CultureInfo("en-GB"))</p>
+    <p><a class="btn btn-warning" href="#">Details</a></p>
+</div>

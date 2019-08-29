@@ -12,6 +12,7 @@ using Shop1.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Shop1.Data.Repository;
+using Shop1.Data.Models;
 
 namespace Shop1
 {
@@ -31,7 +32,16 @@ namespace Shop1
             services.AddDbContext<AppDBContent>(options => options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
             services.AddTransient<IItems, ItemRepository>();
             services.AddTransient<ICategories, CategoryRepository>();
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped(sp => Cart.GetCart(sp));
+            
+
+
+
             services.AddMvc();
+            services.AddMemoryCache();
+            services.AddSession();
             //old realizations of interfaces
             /*
             services.AddTransient<IItems, MockItem>();
@@ -45,6 +55,7 @@ namespace Shop1
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseStaticFiles();
+            app.UseSession();
             app.UseMvcWithDefaultRoute();
 
             //DBObjects.Init(app); //ініціалізує обєкти БД при старті проги   
