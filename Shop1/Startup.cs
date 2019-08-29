@@ -46,6 +46,15 @@ namespace Shop1
             app.UseStatusCodePages();
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
+
+            //DBObjects.Init(app); //ініціалізує обєкти БД при старті проги   
+            // creating of okruzenie(scope)
+            using (var scope = app.ApplicationServices.CreateScope())
+            {
+                AppDBContent content = scope.ServiceProvider.GetRequiredService<AppDBContent>();
+                DBObjects.Init(content);
+            }
+
             //if (env.IsDevelopment())
             //{
             //    app.UseDeveloperExceptionPage();

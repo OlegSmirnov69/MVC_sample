@@ -28,7 +28,6 @@ D:\DEV\sharp\mvc_sample\Shop1\bin\Debug\netcoreapp2.2\Shop1.dll
 D:\DEV\sharp\mvc_sample\Shop1\bin\Debug\netcoreapp2.2\Shop1.pdb
 D:\DEV\sharp\mvc_sample\Shop1\bin\Debug\netcoreapp2.2\Shop1.Views.dll
 D:\DEV\sharp\mvc_sample\Shop1\bin\Debug\netcoreapp2.2\Shop1.Views.pdb
-D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Shop1.csprojAssemblyReference.cache
 D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Shop1.csproj.CoreCompileInputs.cache
 D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Shop1.RazorAssemblyInfo.cache
 D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Shop1.RazorAssemblyInfo.cs

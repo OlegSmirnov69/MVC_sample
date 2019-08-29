@@ -17,11 +17,11 @@ namespace Shop1.Data.Repository
             this.appDB = appDBContent;
         }
 
-        public IEnumerable<Item> GetAllItems => appDB.DBItem.Include(c => c.item_category);
+        public IEnumerable<Item> GetAllItems => appDB.DBItem.Include(c => c.item_category); //DB
 
-        public IEnumerable<Item> GetTopItems => appDB.DBItem.Where(top => top.isTop).Include(c => c.item_category);
+        public IEnumerable<Item> GetTopItems => appDB.DBItem.Where(top => top.isTop).Include(c => c.item_category);//DB
 
-        public Item getItem(int item_id) => appDB.DBItem.FirstOrDefault(i => i.id == item_id);
-        
+        public Item getItem(int item_id) => appDB.DBItem.FirstOrDefault(i => i.id == item_id);//DB
+
     }
 }

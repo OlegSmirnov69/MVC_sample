@@ -23,7 +23,7 @@ namespace Shop1.Data.Models
 
         public bool available { set; get; }
 
-        public int category_id { set; get; }
+        //public int category_id { set; get; }
 
         public virtual Category item_category { set; get; }
     }
