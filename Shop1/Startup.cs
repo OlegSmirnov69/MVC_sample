@@ -32,6 +32,7 @@ namespace Shop1
             services.AddDbContext<AppDBContent>(options => options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
             services.AddTransient<IItems, ItemRepository>();
             services.AddTransient<ICategories, CategoryRepository>();
+            services.AddTransient<IAllOrders, OrdersRepository>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sp => Cart.GetCart(sp));
@@ -56,7 +57,13 @@ namespace Shop1
             app.UseStatusCodePages();
             app.UseStaticFiles();
             app.UseSession();
-            app.UseMvcWithDefaultRoute();
+            //app.UseMvcWithDefaultRoute();
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{id?}");
+                routes.MapRoute(name: "categoryFilter", template: "Item/ShowList/{category?}", defaults: new { Controller= "Item", action= "ShowList" });
+            });
 
             //DBObjects.Init(app); //ініціалізує обєкти БД при старті проги   
             // creating of okruzenie(scope)

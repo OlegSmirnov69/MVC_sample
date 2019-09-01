@@ -4,7 +4,7 @@
 <div class="row mt-5 mb-2">
 
     @{
-        foreach (Item item in Model.getallItems)
+        foreach (Item item in Model.allItems)
         {
             @Html.Partial("AllItems", item)
 

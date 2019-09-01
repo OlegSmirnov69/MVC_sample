@@ -8,7 +8,7 @@ namespace Shop1.ViewModels
 {
     public class ItemsListViewModel
     {
-        public IEnumerable<Item> getallItems { get; set; }
+        public IEnumerable<Item> allItems { get; set; }
         public string currentCategory { get; set; }
 
     }

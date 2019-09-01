@@ -50,3 +50,5 @@ D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Shop1.csprojAssemblyRefere
 D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Shared\AllItems.g.cshtml.cs
 D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Cart\Index.g.cshtml.cs
 D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
+D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Order\Checkout.g.cshtml.cs
+D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Item\ShowItem.g.cshtml.cs

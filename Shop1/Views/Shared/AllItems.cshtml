@@ -5,5 +5,6 @@
     <h2>Name: @Model.name</h2>
     <p>@Model.shortDesc</p>
     <p>Price: @Model.price.ToString("C", new CultureInfo("en-GB"))</p>
-    <p><a class="btn btn-warning" href="#">Details</a></p>
+    <p><a class="btn btn-info"  asp-controller="Item"   asp-action="ShowItem" asp-route-id="@Model.id">Details</a></p>
+    <p><a class="btn btn-warning" asp-controller="Cart" asp-action="AddToCart" asp-route-id="@Model.id">Add to Cart</a></p>
 </div>
