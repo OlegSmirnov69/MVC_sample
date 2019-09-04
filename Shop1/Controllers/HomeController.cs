@@ -19,8 +19,27 @@ namespace Shop1.Controllers
         {
             _itemRep = itemRep;
         }
-        // GET: Home
-        public ViewResult Index()
+        //GET: Home
+        //public ViewResult Index()
+        //{
+        //    var homeItems = new HomeViewModel
+        //    {
+        //        topItems = _itemRep.GetTopItems
+        //    };
+        //    return View(homeItems);
+        //}
+
+        public string Index()
+        {
+            string result = "Вы не авторизованы";
+            if (User.Identity.IsAuthenticated)
+            {
+                result = "Ваш логин: " + User.Identity.Name;
+            }
+            return result;
+        }
+
+        public ViewResult About()
         {
             var homeItems = new HomeViewModel
             {
@@ -29,6 +48,6 @@ namespace Shop1.Controllers
             return View(homeItems);
         }
 
-       
+
     }
 }

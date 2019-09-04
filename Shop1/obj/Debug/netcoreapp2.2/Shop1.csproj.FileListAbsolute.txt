@@ -52,3 +52,9 @@ D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Cart\Index.g.c
 D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
 D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Order\Checkout.g.cshtml.cs
 D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Item\ShowItem.g.cshtml.cs
+D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Shop1.Properties.Resources.resources
+D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Shop1.csproj.GenerateResource.cache
+D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Account\Register.g.cshtml.cs
+D:\DEV\sharp\mvc_sample\Shop1\bin\Debug\netcoreapp2.2\System.Web.ApplicationServices.dll
+D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.g.cshtml.cs
+D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
