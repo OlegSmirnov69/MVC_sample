@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Shop1.Data.Repository;
 using Shop1.Data.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace Shop1
 {
@@ -30,13 +31,21 @@ namespace Shop1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDBContent>(options => options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<UserContext>(options => options.UseSqlServer(_confString.GetConnectionString("UserConnection")));
             services.AddTransient<IItems, ItemRepository>();
             services.AddTransient<ICategories, CategoryRepository>();
             services.AddTransient<IAllOrders, OrdersRepository>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sp => Cart.GetCart(sp));
-            
+            //------------------
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options => //CookieAuthenticationOptions
+                {
+                    options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
+                });
+
+            //-----------------
 
 
 
@@ -58,6 +67,7 @@ namespace Shop1
             app.UseStaticFiles();
             app.UseSession();
             //app.UseMvcWithDefaultRoute();
+            app.UseAuthentication(); //     auth added
 
             app.UseMvc(routes =>
             {

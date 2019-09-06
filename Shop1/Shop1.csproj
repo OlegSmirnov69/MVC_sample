@@ -9,10 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Web.config" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.2.0" />
     <PackageReference Include="JSON" Version="1.0.1" />
     <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
@@ -31,11 +27,6 @@
     <Folder Include="wwwroot\img\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\js\" />
-    <Folder Include="Data\Missing\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Web.config" />
   </ItemGroup>
 
   <ItemGroup>

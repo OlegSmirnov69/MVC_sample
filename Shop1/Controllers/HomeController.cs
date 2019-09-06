@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Shop1.Data.Interfaces;
 using Shop1.Data.Models;
 using Shop1.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Shop1.Controllers
 {
@@ -29,17 +30,14 @@ namespace Shop1.Controllers
         //    return View(homeItems);
         //}
 
-        public string Index()
+        [Authorize]
+        public IActionResult About()
         {
-            string result = "Вы не авторизованы";
-            if (User.Identity.IsAuthenticated)
-            {
-                result = "Ваш логин: " + User.Identity.Name;
-            }
-            return result;
-        }
+            return Content(User.Identity.Name);
 
-        public ViewResult About()
+        }
+        
+        public ViewResult Index()
         {
             var homeItems = new HomeViewModel
             {
