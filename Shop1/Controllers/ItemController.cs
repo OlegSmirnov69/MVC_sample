@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Shop1.Data.Interfaces;
 using Shop1.Data.Models;
 using Shop1.ViewModels;
+using Microsoft.AspNetCore.Identity;
 
 namespace Shop1.Controllers
 {
@@ -13,11 +14,14 @@ namespace Shop1.Controllers
     {
         private readonly IItems _items;
         private readonly ICategories _categories;
+        //-----------------------------
+        private readonly UserManager<User> _userManager;
 
-        public ItemController (IItems iitems, ICategories icategories)
+        public ItemController (IItems iitems, ICategories icategories, UserManager<User> userManager)
         {
             _items = iitems;
             _categories = icategories;
+            _userManager = userManager;
         }
 
         [Route("Item/ShowList")]
@@ -77,6 +81,8 @@ namespace Shop1.Controllers
             };
 
             ViewBag.Title = "Item";
+            ViewBag.userid = _userManager.GetUserId(HttpContext.User);
+            
 
             return View(one_item);
         }

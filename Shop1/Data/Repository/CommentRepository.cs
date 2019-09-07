@@ -12,32 +12,37 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Shop1.Controllers;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
+using Microsoft.EntityFrameworkCore;
 
 namespace Shop1.Data.Repository
 {
-    public class CommentRepository : IComments
+    public class CommentRepository //: IComments
     {
 
         private readonly UserContext userContext;
         private readonly Comment comment;
+        private readonly User user;
+        private readonly Item item;
 
-        public CommentRepository(UserContext userCont, Comment comm)
+        UserManager<User> _userManager;
+
+        public CommentRepository(UserContext userCont, Comment comm, User user, Item item)
         {
             this.userContext = userCont;
             this.comment = comm;
+            this.user = user;
+            this.item = item;
         }
+
+        public IEnumerable<Comment> GetComments => userContext.Comments.Include(c => c.id);
+
         //-----------------------------------
 
-    
+
 
         //----------------------------------
 
 
-        public void createComment(Comment comment)
-        {
-            comment.date = DateTime.Now;
-            userContext.Comments.Add(comment);
-            comment.text = "FirstComment";
-        }
+        
     }
 }

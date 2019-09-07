@@ -14,6 +14,7 @@ using Microsoft.EntityFrameworkCore;
 using Shop1.Data.Repository;
 using Shop1.Data.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 
 namespace Shop1
 {
@@ -35,18 +36,19 @@ namespace Shop1
             services.AddTransient<IItems, ItemRepository>();
             services.AddTransient<ICategories, CategoryRepository>();
             services.AddTransient<IAllOrders, OrdersRepository>();
+            //services.AddTransient<IComments, CommentRepository>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sp => Cart.GetCart(sp));
-            //------------------
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                .AddCookie(options => //CookieAuthenticationOptions
-                {
-                    options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
-                });
+            //------------------ OLD AUTH REALIZATION
+            //services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            //    .AddCookie(options => //CookieAuthenticationOptions
+            //    {
+            //        options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
+            //    });
 
-            //-----------------
-
+            //----------------- NEW AUTH REALIZATION
+            services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<UserContext>();
 
 
             services.AddMvc();
@@ -80,7 +82,9 @@ namespace Shop1
             using (var scope = app.ApplicationServices.CreateScope())
             {
                 AppDBContent content = scope.ServiceProvider.GetRequiredService<AppDBContent>();
+                //UserContext comm_content = scope.ServiceProvider.GetRequiredService<UserContext>();
                 DBObjects.Init(content);
+                //DBObjects.InitComments(comm_content);
             }
 
             //if (env.IsDevelopment())

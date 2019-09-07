@@ -23,6 +23,9 @@
     <title>OpenLayers example</title>
 </head>
 <body>
+    <h3>@ViewBag.userid</h3>
+    <p><a class="btn btn-warning" asp-controller="Comment" asp-action="createComment">Add Commentt</a></p>
+    @* ------------------------------------------ *@
     <h2>My Map</h2>
     <div id="map" class="map"></div>
     <div id="popup" class="ol-popup">
@@ -58,35 +61,35 @@
         map.addLayer(layer);
         //----------------------------------
         var container = document.getElementById('popup');
-         var content = document.getElementById('popup-content');
-         var closer = document.getElementById('popup-closer');
+        var content = document.getElementById('popup-content');
+        var closer = document.getElementById('popup-closer');
 
-         var overlay = new ol.Overlay({
-             element: container,
-             autoPan: true,
-             autoPanAnimation: {
-                 duration: 250
-             }
-         });
-         map.addOverlay(overlay);
+        var overlay = new ol.Overlay({
+            element: container,
+            autoPan: true,
+            autoPanAnimation: {
+                duration: 250
+            }
+        });
+        map.addOverlay(overlay);
 
-         closer.onclick = function() {
-             overlay.setPosition(undefined);
-             closer.blur();
-             return false;
+        closer.onclick = function () {
+            overlay.setPosition(undefined);
+            closer.blur();
+            return false;
         };
 
-         map.on('singleclick', function (event) {
-             if (map.hasFeatureAtPixel(event.pixel) === true) {
-                 var coordinate = event.coordinate;
+        map.on('singleclick', function (event) {
+            if (map.hasFeatureAtPixel(event.pixel) === true) {
+                var coordinate = event.coordinate;
 
-                 content.innerHTML = '<b>Hello world!</b><br />I am a popup.';
-                 overlay.setPosition(coordinate);
-             } else {
-                 overlay.setPosition(undefined);
-                 closer.blur();
-             }
-         });
+                content.innerHTML = '<b>Hello world!</b><br />I am a popup.';
+                overlay.setPosition(coordinate);
+            } else {
+                overlay.setPosition(undefined);
+                closer.blur();
+            }
+        });
 
 
 

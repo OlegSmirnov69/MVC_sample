@@ -12,7 +12,8 @@ namespace Shop1.Data.Models
         public string text { set; get; }
         public string user_name { set; get; }
         public string user_country { set; get; }
-        public int item_id { set; get; }
+        //public int item { set; get; }
+        //public virtual Item item_id { set; get; }
 
 
     }

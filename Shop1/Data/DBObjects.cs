@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Shop1.Data.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace Shop1.Data
 {
@@ -69,9 +70,11 @@ namespace Shop1.Data
 
                     );
             
+            
             content.SaveChanges();
         }
 
+        
         public static Dictionary<string, Category> category_collection;
 
         public static Dictionary<string, Category> GetCategories
@@ -95,5 +98,42 @@ namespace Shop1.Data
                 return category_collection;
             }
         }
+
+        //------------Comments
+        
+
+        //public static void InitComments(UserContext comm_content)
+        //{
+
+        //    //if (!content.Comments.Any())
+        //    //    content.Comments.AddRange(GetCategories.Select(c => c.Value));
+
+
+        //    if (!comm_content.Comments.Any())
+        //        comm_content.AddRange(
+
+        //            new Comment
+        //            {
+        //                date = DateTime.Now,
+        //                text = "FirstComment",
+        //                user_name = "User1",
+        //                user_country = "USA1"
+                        
+        //            },
+        //            new Comment
+        //            {
+        //                date = DateTime.Now,
+        //                text = "SecondComment",
+        //                user_name = "User2",
+        //                user_country = "USA2"
+        //            }
+
+        //            );
+
+
+        //    comm_content.SaveChanges();
+        //}
+
+
     }
 }

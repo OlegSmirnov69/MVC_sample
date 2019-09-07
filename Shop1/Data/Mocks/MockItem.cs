@@ -29,7 +29,7 @@ namespace Shop1.Data.Mocks
                         price = 54000,
                         isTop = true,
                         available = true,
-                        item_category = _category.GetAllCategories.First()
+                        item_category = _category.GetAllCategories.Last()
                     },
                     new Item
                     {
@@ -62,7 +62,7 @@ namespace Shop1.Data.Mocks
                         price = 14000,
                         isTop = false,
                         available = true,
-                        item_category = _category.GetAllCategories.First()
+                        item_category = _category.GetAllCategories.Last()
                     }
                 };
             }
