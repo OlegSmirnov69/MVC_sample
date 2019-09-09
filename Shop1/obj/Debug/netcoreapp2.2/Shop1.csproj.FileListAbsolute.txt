@@ -65,3 +65,4 @@ D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Comments\Delet
 D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Comments\Details.g.cshtml.cs
 D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Comments\Edit.g.cshtml.cs
 D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Comments\Index.g.cshtml.cs
+D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Shop1.csprojAssemblyReference.cache

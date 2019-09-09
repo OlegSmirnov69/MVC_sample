@@ -33,7 +33,7 @@ namespace Shop1.Data
                         longitude = 24.4,
                         latitude = 42.2,
                         //item_category = new Category { CategoryName = "сars", desc = "four wheels and engine" }
-                        item_category = GetCategories["cars"] 
+                        item_category = GetCategories["Places"] 
                     },
                     new Item
                     {
@@ -111,8 +111,8 @@ namespace Shop1.Data
                 {
                     var category_list = new Category[]
                     {
-                        new Category { CategoryName = "сars", desc="four wheels and engine"},
-                        new Category { CategoryName = "planes", desc = "wings and engine"}
+                        new Category { CategoryName = "Places", desc="A place for desc"},
+                        new Category { CategoryName = "Misc", desc = "A place for desc"}
                     };
 
                     category_collection = new Dictionary<string, Category>();

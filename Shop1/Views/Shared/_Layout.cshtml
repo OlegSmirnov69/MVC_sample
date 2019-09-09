@@ -20,16 +20,16 @@
                         <a class="nav-link" asp-controller="Home" asp-action="Index">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Item/ShowList">Items</a>
+                        <a class="nav-link" href="/Item/ShowList">All Places</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Item/ShowList/planes">Planes</a>
+                        <a class="nav-link" href="/Item/ShowList/Places">Places</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Item/ShowList/cars">Cars</a>
+                        <a class="nav-link" href="/Item/ShowList/Misc">Misc</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Cart/">Cart</a>
+                        <a class="nav-link" href="/Comments/">Comments</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="/Home/About">About</a>
@@ -38,7 +38,7 @@
 
                 @if (User.Identity.IsAuthenticated)
                 {
-                    <b class="font-weight-bold mr-1 ">@User.Identity.Name</b>
+                    <b class="font-weight-bold mr-1 " style="color:white;">@User.Identity.Name</b>
                     
                     <form method="post" asp-controller="Account" asp-action="LogOff">
                         <button type="submit" class="btn btn-secondary pt-1">Logout</button>

@@ -38,13 +38,13 @@ namespace Shop1.Controllers
             }
             else
             {
-                if (string.Equals("cars", category, StringComparison.OrdinalIgnoreCase))
+                if (string.Equals("Places", category, StringComparison.OrdinalIgnoreCase))
                 {
-                    items = _items.GetAllItems.Where(i => i.item_category.CategoryName.Equals("cars")).OrderBy(i => i.id);
+                    items = _items.GetAllItems.Where(i => i.item_category.CategoryName.Equals("Places")).OrderBy(i => i.id);
                 }
-                else if (string.Equals("planes", category, StringComparison.OrdinalIgnoreCase))
+                else if (string.Equals("Misc", category, StringComparison.OrdinalIgnoreCase))
                 {
-                    items = _items.GetAllItems.Where(i => i.item_category.CategoryName.Equals("planes")).OrderBy(i => i.id);
+                    items = _items.GetAllItems.Where(i => i.item_category.CategoryName.Equals("Misc")).OrderBy(i => i.id);
                 }
 
                 curr_category = _category;
