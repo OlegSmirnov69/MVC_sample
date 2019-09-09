@@ -32,7 +32,7 @@ namespace Shop1.Data.Repository
                 {
                     item_id = el.item.id,
                     order_id = order.id,
-                    price = el.item.price
+                    adress = el.item.adress
                 };
 
                 appDBContent.DBOrderDetail.Add(orderDetail);

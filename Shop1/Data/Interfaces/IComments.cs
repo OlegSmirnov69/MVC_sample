@@ -9,6 +9,6 @@ namespace Shop1.Data.Interfaces
     public interface IComments
     {
        // IEnumerable<Comment> GetComments { get; }
-        void createComment(Comment comment);
+        void AddComment(Comment comment);
     }
 }

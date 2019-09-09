@@ -39,7 +39,7 @@ namespace Shop1.Data.Models
             {
                 cart_id = cart_id,
                 item = item,
-                price = item.price
+                adress = item.adress
             }
                 );
 

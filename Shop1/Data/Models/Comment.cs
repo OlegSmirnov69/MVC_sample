@@ -7,11 +7,11 @@ namespace Shop1.Data.Models
 {
     public class Comment
     {
-        public int id { set; get; } 
-        public DateTime date { set; get; }
-        public string text { set; get; }
-        public string user_name { set; get; }
-        public string user_country { set; get; }
+        public int Id { set; get; } 
+        public string Date { set; get; }
+        public string Text { set; get; }
+        //public string Name { set; get; }
+        //public string Country { set; get; }
         //public int item { set; get; }
         //public virtual Item item_id { set; get; }
 

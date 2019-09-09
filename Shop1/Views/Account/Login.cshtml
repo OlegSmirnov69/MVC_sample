@@ -1,6 +1,6 @@
 ﻿@model Shop1.ViewModels.LoginViewModel
 
-<h2>Вход в приложение</h2>
+@*<h2>Вход в приложение</h2>
 <form method="post" asp-controller="Account" asp-action="Login"
       asp-route-returnUrl="@Model.ReturnUrl">
     <div asp-validation-summary="ModelOnly"></div>
@@ -21,4 +21,29 @@
     <div>
         <input type="submit" value="Войти" />
     </div>
-</form>
+</form>*@
+    <body class="text-center">
+
+        <form method="post" asp-controller="Account" asp-action="Login" asp-route-returnUrl="@Model.ReturnUrl" class="form-signin">
+            <div class="container mt-5" style="width: 40%; margin:auto;">
+                <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+                <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+
+                <label for="inputEmail" class="sr-only" asp-for="Email">Email address</label>
+                <input id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="" asp-for="Email">
+                <span asp-validation-for="Email"></span>
+
+                <label for="inputPassword" class="sr-only" asp-for="Password">Password</label>
+                <input id="inputPassword" class="form-control mt-2" placeholder="Password" required="" asp-for="Password">
+                <span asp-validation-for="Password"></span>
+
+                <div class="checkbox mb-3">
+                    <label asp-for="RememberMe">
+                        <input asp-for="RememberMe" />RememberMe
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                <p class="mt-5 mb-3 text-muted">© 2019</p>
+            </div>
+        </form>
+    </body>

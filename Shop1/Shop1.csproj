@@ -25,7 +25,6 @@
   <ItemGroup>
     <Folder Include="Views\Category\" />
     <Folder Include="wwwroot\img\" />
-    <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\js\" />
   </ItemGroup>
 

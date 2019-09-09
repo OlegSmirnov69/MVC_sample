@@ -1,14 +1,5 @@
 ﻿@model ItemViewModel
 
-<div class="container">
-
-        <div>
-            <b>Item: </b> @Model.getitem.name<br />
-            <b>Item: </b> @Model.getitem.shortDesc<br />
-            <b>Item: </b> @Model.getitem.longDesc<br />
-        </div>
-    </div>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -23,77 +14,109 @@
     <title>OpenLayers example</title>
 </head>
 <body>
-    <h3>@ViewBag.userid</h3>
-    <p><a class="btn btn-warning" asp-controller="Comment" asp-action="createComment">Add Commentt</a></p>
-    @* ------------------------------------------ *@
-    <h2>My Map</h2>
-    <div id="map" class="map"></div>
-    <div id="popup" class="ol-popup">
-        <a href="#" id="popup-closer" class="ol-popup-closer"></a>
-        <div id="popup-content"></div>
+    <div class="container">
+
+        <div class="card bg-dark text-white" style="margin-top: 20px;">
+            <img class="card-img img-fluid" src="@Model.getitem.img" alt="@Model.getitem.name" /><br />
+            <div class="card-img-overlay">
+                <h5 class="card-title " style="font-size: 100px;">@Model.getitem.name</h5>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        @*<img class="card-img img-fluid" src="@Model.getitem.img" alt="@Model.getitem.name" /><br />*@
+        @*<b>Name: </b> @Model.getitem.name<br />*@
+        <p>@Model.getitem.shortDesc </p>
+        <p>@Model.getitem.longDesc </p>
+        <p>@Model.getitem.adress </p>
+        <p>@Model.getitem.longitude </p>
+        <p>@Model.getitem.latitude </p>
+
+        @* ------------------MISC------------------------ *@
+        <h3>@ViewBag.userid</h3>
+        @*<p><a class="btn btn-warning" type="submit" method="post" asp-controller="Comment" asp-action="ShowComment">Add Commentt</a></p>*@
+        <form asp-controller="Comment" asp-action="ShowComment" method="post" class="form-horizontal">
+
+
+            <input class="btn btn-warning" type="submit" value="Make an Order" />
+
+        </form>
+        @* ------------------MAP------------------------ *@
+        <hr class="featurette-divider">
+        <h2 style="margin:auto;" class="text-muted">This place on the map</h2>
+
+        <div id="map" class="map border border-secondary rounded-lg"></div>
+        <div id="popup" class="ol-popup">
+            <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+            <div id="popup-content"></div>
+        </div>
+        @* -----------COMMENTS-------------- *@
+        <iframe src="/Comments/" width="100%" height="200" align="left"></iframe>
+
+
     </div>
 
-
-    <script type="text/javascript">
-        //--------------------------------
-        var map = new ol.Map({
-            target: 'map',
-            layers: [
-                new ol.layer.Tile({
-                    source: new ol.source.OSM()
-                })
-            ],
-            view: new ol.View({
-                center: ol.proj.fromLonLat([24.026476, 49.8393446]),
-                zoom: 16
-            })
-        });
-
-        var layer = new ol.layer.Vector({
-            source: new ol.source.Vector({
-                features: [
-                    new ol.Feature({
-                        geometry: new ol.geom.Point(ol.proj.fromLonLat([24.026476, 49.8393446]))
+        <script type="text/javascript">
+            //--------------------------------
+            var map = new ol.Map({
+                target: 'map',
+                layers: [
+                    new ol.layer.Tile({
+                        source: new ol.source.OSM()
                     })
-                ]
-            })
-        });
-        map.addLayer(layer);
-        //----------------------------------
-        var container = document.getElementById('popup');
-        var content = document.getElementById('popup-content');
-        var closer = document.getElementById('popup-closer');
+                ],
+                view: new ol.View({
+                    center: ol.proj.fromLonLat([@Model.getitem.longitude, @Model.getitem.latitude]),
+                    zoom: 16
+                })
+            });
 
-        var overlay = new ol.Overlay({
-            element: container,
-            autoPan: true,
-            autoPanAnimation: {
-                duration: 250
-            }
-        });
-        map.addOverlay(overlay);
+            var layer = new ol.layer.Vector({
+                source: new ol.source.Vector({
+                    features: [
+                        new ol.Feature({
+                            geometry: new ol.geom.Point(ol.proj.fromLonLat([@Model.getitem.longitude, @Model.getitem.latitude]))
+                        })
+                    ]
+                })
+            });
+            map.addLayer(layer);
+            //----------------------------------
+            var container = document.getElementById('popup');
+            var content = document.getElementById('popup-content');
+            var closer = document.getElementById('popup-closer');
 
-        closer.onclick = function () {
-            overlay.setPosition(undefined);
-            closer.blur();
-            return false;
-        };
+            var overlay = new ol.Overlay({
+                element: container,
+                autoPan: true,
+                autoPanAnimation: {
+                    duration: 250
+                }
+            });
+            map.addOverlay(overlay);
 
-        map.on('singleclick', function (event) {
-            if (map.hasFeatureAtPixel(event.pixel) === true) {
-                var coordinate = event.coordinate;
-
-                content.innerHTML = '<b>Hello world!</b><br />I am a popup.';
-                overlay.setPosition(coordinate);
-            } else {
+            closer.onclick = function () {
                 overlay.setPosition(undefined);
                 closer.blur();
-            }
-        });
+                return false;
+            };
+
+            map.on('singleclick', function (event) {
+                if (map.hasFeatureAtPixel(event.pixel) === true) {
+                    var coordinate = event.coordinate;
+
+                    content.innerHTML = '<b>Hello world!</b><br />I am a popup.';
+                    overlay.setPosition(coordinate);
+                } else {
+                    overlay.setPosition(undefined);
+                    closer.blur();
+                }
+            });
 
 
 
 
-    </script>
+        </script>
 </body>
 </html>

@@ -57,5 +57,11 @@ D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Account\Regist
 D:\DEV\sharp\mvc_sample\Shop1\bin\Debug\netcoreapp2.2\System.Web.ApplicationServices.dll
 D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.g.cshtml.cs
 D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
-D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Shop1.csprojAssemblyReference.cache
-D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Comment\AdComent.g.cshtml.cs
+D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Users\Create.g.cshtml.cs
+D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Users\Edit.g.cshtml.cs
+D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Users\Index.g.cshtml.cs
+D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Comments\Create.g.cshtml.cs
+D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Comments\Delete.g.cshtml.cs
+D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Comments\Details.g.cshtml.cs
+D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Comments\Edit.g.cshtml.cs
+D:\DEV\sharp\mvc_sample\Shop1\obj\Debug\netcoreapp2.2\Razor\Views\Comments\Index.g.cshtml.cs

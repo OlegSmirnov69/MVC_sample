@@ -9,7 +9,7 @@ namespace Shop1.Data.Models
     {
         public int id { get; set; }
         public Item item { get; set; }
-        public int price { get; set; }
+        public string adress { get; set; }
 
         public string cart_id { get; set; }
     }

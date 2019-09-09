@@ -28,9 +28,10 @@ namespace Shop1.Data
                         shortDesc = "Car from Musk",
                         longDesc = "A place for long Description",
                         img = "/img/tesla.jpg",
-                        price = 54000,
+                        adress = "Adress1",
                         isTop = true,
-                        available = true,
+                        longitude = 24.4,
+                        latitude = 42.2,
                         //item_category = new Category { CategoryName = "сars", desc = "four wheels and engine" }
                         item_category = GetCategories["cars"] 
                     },
@@ -40,9 +41,10 @@ namespace Shop1.Data
                         shortDesc = "Nice plane",
                         longDesc = "A place for long Description",
                         img = "/img/cessna.jpg",
-                        price = 25000,
+                        adress = "Adress1",
                         isTop = true,
-                        available = true,
+                        longitude = 24.4,
+                        latitude = 42.2,
                         item_category = GetCategories["planes"]
                     },
                     new Item
@@ -51,9 +53,10 @@ namespace Shop1.Data
                         shortDesc = "Big plane",
                         longDesc = "A place for long Description",
                         img = "/img/boeing.jpg",
-                        price = 62000,
-                        isTop = false,
-                        available = false,
+                        adress = "Adress1",
+                        isTop = true,
+                        longitude = 24.4,
+                        latitude = 42.2,
                         item_category = GetCategories["planes"]
                     },
                     new Item
@@ -62,16 +65,39 @@ namespace Shop1.Data
                         shortDesc = "A car",
                         longDesc = "A place for long Description",
                         img = "/img/bmw.jpg",
-                        price = 14000,
-                        isTop = false,
-                        available = true,
+                        adress = "Adress1",
+                        isTop = true,
+                        longitude = 24.4,
+                        latitude = 42.2,
                         item_category = GetCategories["cars"]
                     }
 
                     );
-            
-            
-            content.SaveChanges();
+            //---------------------------------
+            if (!content.Comments.Any())
+            {
+                content.Comments.AddRange(
+                    new Comment
+                    {
+                        Date = "iPhone 6S",
+                        Text = "Apple",
+
+                    },
+                    new Comment
+                    {
+                        Date = "Samsung Galaxy Edge",
+                        Text = "Samsung",
+                    },
+                    new Comment
+                    {
+                        Date = "Lumia 950",
+                        Text = "Microsoft",
+                    }
+
+                );
+
+                content.SaveChanges();
+            }
         }
 
         

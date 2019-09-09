@@ -1,15 +1,21 @@
 ﻿
 <h2>@Model.currentCategory</h2>
 
-<div class="row mt-5 mb-2">
+<div class="album py-5 bg-light">
+    <div class="container" style="background-color:aqua;">
 
-    @{
-        foreach (Item item in Model.allItems)
-        {
-            @Html.Partial("AllItems", item)
+        <div class="row">
+            
 
-        }
-    }
+                @{
+                    foreach (Item item in Model.allItems)
+                    {
+                        @Html.Partial("AllItems", item)
 
-</div>
+                    }
+                }
+
+            </div>
+            </div>
+        </div>
 

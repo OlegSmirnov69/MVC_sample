@@ -14,7 +14,7 @@ namespace Shop1.Data.Models
     public class UserContext : IdentityDbContext<User>
     {
         //public DbSet<User> Users { get; set; }
-        public DbSet<Comment> Comments { get; set; }
+       
         public UserContext(DbContextOptions<UserContext> options)
             : base(options)
         {

@@ -26,9 +26,10 @@ namespace Shop1.Data.Mocks
                         shortDesc = "Car from Musk",
                         longDesc = "A place for long Description",
                         img = "/img/tesla.jpg",
-                        price = 54000,
+                        adress = "Adress1",
                         isTop = true,
-                        available = true,
+                        longitude = 24.4,
+                        latitude = 42.2,
                         item_category = _category.GetAllCategories.Last()
                     },
                     new Item
@@ -37,9 +38,10 @@ namespace Shop1.Data.Mocks
                         shortDesc = "Nice plane",
                         longDesc = "A place for long Description",
                         img = "/img/cessna.jpg",
-                        price = 25000,
+                        adress = "Adress1",
                         isTop = true,
-                        available = true,
+                        longitude = 24.4,
+                        latitude = 42.2,
                         item_category = _category.GetAllCategories.First()
                     },
                     new Item
@@ -48,9 +50,10 @@ namespace Shop1.Data.Mocks
                         shortDesc = "Big plane",
                         longDesc = "A place for long Description",
                         img = "/img/boeing.jpg",
-                        price = 62000,
-                        isTop = false,
-                        available = false,
+                        adress = "Adress1",
+                        isTop = true,
+                        longitude = 24.4,
+                        latitude = 42.2,
                         item_category = _category.GetAllCategories.First()
                     },
                     new Item
@@ -59,9 +62,10 @@ namespace Shop1.Data.Mocks
                         shortDesc = "A car",
                         longDesc = "A place for long Description",
                         img = "/img/bmw.jpg",
-                        price = 14000,
-                        isTop = false,
-                        available = true,
+                        adress = "Adress1",
+                        isTop = true,
+                        longitude = 24.4,
+                        latitude = 42.2,
                         item_category = _category.GetAllCategories.Last()
                     }
                 };

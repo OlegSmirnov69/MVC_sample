@@ -25,11 +25,11 @@ namespace Shop1.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("adress");
+
                     b.Property<string>("cart_id");
 
                     b.Property<int?>("itemid");
-
-                    b.Property<int>("price");
 
                     b.HasKey("id");
 
@@ -53,15 +53,28 @@ namespace Shop1.Migrations
                     b.ToTable("DBCategory");
                 });
 
+            modelBuilder.Entity("Shop1.Data.Models.Comment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Date");
+
+                    b.Property<string>("Text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Comments");
+                });
+
             modelBuilder.Entity("Shop1.Data.Models.Item", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<bool>("available");
-
-                    b.Property<int>("category_id");
+                    b.Property<string>("adress");
 
                     b.Property<string>("img");
 
@@ -69,11 +82,13 @@ namespace Shop1.Migrations
 
                     b.Property<int?>("item_categoryid");
 
+                    b.Property<double>("latitude");
+
                     b.Property<string>("longDesc");
 
-                    b.Property<string>("name");
+                    b.Property<double>("longitude");
 
-                    b.Property<int>("price");
+                    b.Property<string>("name");
 
                     b.Property<string>("shortDesc");
 
@@ -109,6 +124,8 @@ namespace Shop1.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("adress");
+
                     b.Property<int>("item_id");
 
                     b.Property<int?>("itemid");
@@ -116,8 +133,6 @@ namespace Shop1.Migrations
                     b.Property<int>("order_id");
 
                     b.Property<int?>("orderid");
-
-                    b.Property<long>("price");
 
                     b.HasKey("id");
 

@@ -10,7 +10,7 @@ namespace Shop1.Data.Models
         public int id { get; set; }
         public int order_id { get; set; }
         public int item_id { get; set; }
-        public uint price { get; set; }
+        public string adress { get; set; }
         public virtual Item item { get; set; }
         public virtual Order order { get; set; }
     }
