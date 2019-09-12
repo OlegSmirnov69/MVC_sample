@@ -38,15 +38,18 @@ namespace Shop1.Controllers
             }
             else
             {
-                if (string.Equals("Places", category, StringComparison.OrdinalIgnoreCase))
+                if (string.Equals("Historical", category, StringComparison.OrdinalIgnoreCase))
                 {
-                    items = _items.GetAllItems.Where(i => i.item_category.CategoryName.Equals("Places")).OrderBy(i => i.id);
+                    items = _items.GetAllItems.Where(i => i.item_category.CategoryName.Equals("Historical")).OrderBy(i => i.id);
+                }
+                else if (string.Equals("Food", category, StringComparison.OrdinalIgnoreCase))
+                {
+                    items = _items.GetAllItems.Where(i => i.item_category.CategoryName.Equals("Food")).OrderBy(i => i.id);
                 }
                 else if (string.Equals("Misc", category, StringComparison.OrdinalIgnoreCase))
                 {
                     items = _items.GetAllItems.Where(i => i.item_category.CategoryName.Equals("Misc")).OrderBy(i => i.id);
                 }
-
                 curr_category = _category;
 
             }
@@ -82,6 +85,7 @@ namespace Shop1.Controllers
 
             ViewBag.Title = "Item";
             ViewBag.userid = _userManager.GetUserId(HttpContext.User);
+            ViewBag.username = _userManager.GetUserName(HttpContext.User);
             
 
             return View(one_item);

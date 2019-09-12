@@ -7,24 +7,27 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Shop1.Data;
 using Shop1.Data.Models;
+using Microsoft.AspNetCore.Identity; //-------
 
 namespace Shop1.Controllers
 {
     public class CommentsController : Controller
     {
         private readonly AppDBContent _context;
+        private readonly UserManager<User> _userManager;  //-------
+        
 
-        public CommentsController(AppDBContent context)
+        public CommentsController(AppDBContent context, UserManager<User> userManager)//-------
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Comments
-        //public async Task<IActionResult> Index()
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            //return View(await _context.Comments.ToListAsync());
-            return View(_context.Comments.ToList());
+            ViewBag.username = _userManager.GetUserName(HttpContext.User);
+            return View(await _context.Comments.ToListAsync());
         }
 
         // GET: Comments/Details/5
@@ -48,6 +51,7 @@ namespace Shop1.Controllers
         // GET: Comments/Create
         public IActionResult Create()
         {
+            ViewBag.username = _userManager.GetUserName(HttpContext.User);
             return View();
         }
 
@@ -56,7 +60,7 @@ namespace Shop1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Date,Text")] Comment comment)
+        public async Task<IActionResult> Create([Bind("Id,Date,Text,User,UserCountry")] Comment comment)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +92,7 @@ namespace Shop1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Date,Text")] Comment comment)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Date,Text,User,UserCountry")] Comment comment)
         {
             if (id != comment.Id)
             {

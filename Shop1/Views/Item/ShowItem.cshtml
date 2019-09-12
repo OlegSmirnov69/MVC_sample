@@ -14,37 +14,26 @@
     <title>OpenLayers example</title>
 </head>
 <body>
-    <div class="container">
-
-        <div class="card bg-dark text-white" style="margin-top: 20px;">
+    <div class="container bg-light pt-1 rounded-lg mt-3 mb-3">
+        @* ---------CARD------------------------ *@
+        <div class="card bg-dark text-white" style="margin-top: 20px; ">
             <img class="card-img img-fluid" src="@Model.getitem.img" alt="@Model.getitem.name" /><br />
             <div class="card-img-overlay">
-                <h5 class="card-title " style="font-size: 100px;">@Model.getitem.name</h5>
+                <h5 class="card-title display-2" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">@Model.getitem.name</h5>
+                <h6 class="card-subtitle mb-2 text-muted display-4">@Model.getitem.adress</h6>
             </div>
         </div>
-
         <hr class="featurette-divider">
-
-        @*<img class="card-img img-fluid" src="@Model.getitem.img" alt="@Model.getitem.name" /><br />*@
-        @*<b>Name: </b> @Model.getitem.name<br />*@
-        <p>@Model.getitem.shortDesc </p>
-        <p>@Model.getitem.longDesc </p>
-        <p>@Model.getitem.adress </p>
-        <p>@Model.getitem.longitude </p>
-        <p>@Model.getitem.latitude </p>
+        @*-------------Content-----------------*@
+        <p class="display-4" style="font-size:190%;"><strong>@Model.getitem.shortDesc</strong></p>
+        <p class="display-4" style="font-size:150%;">@Model.getitem.longDesc </p>
 
         @* ------------------MISC------------------------ *@
         <h3>@ViewBag.userid</h3>
-        @*<p><a class="btn btn-warning" type="submit" method="post" asp-controller="Comment" asp-action="ShowComment">Add Commentt</a></p>*@
-        <form asp-controller="Comment" asp-action="ShowComment" method="post" class="form-horizontal">
-
-
-            <input class="btn btn-warning" type="submit" value="Make an Order" />
-
-        </form>
+        <h3>@ViewBag.username</h3>
         @* ------------------MAP------------------------ *@
         <hr class="featurette-divider">
-        <h2 style="margin:auto;" class="text-muted">This place on the map</h2>
+        <h2 style="margin:auto;" class="text-muted mb-3">This place on the map</h2>
 
         <div id="map" class="map border border-secondary rounded-lg"></div>
         <div id="popup" class="ol-popup">
@@ -52,12 +41,14 @@
             <div id="popup-content"></div>
         </div>
         @* -----------COMMENTS-------------- *@
-        <iframe src="/Comments/" width="100%" height="200" align="left"></iframe>
-
-
+        <hr class="featurette-divider">
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="/Comments/" width="100%" height="200" align="left"></iframe>
+        </div>
+        <br />
     </div>
 
-        <script type="text/javascript">
+    <script type="text/javascript">
             //--------------------------------
             var map = new ol.Map({
                 target: 'map',
@@ -67,7 +58,8 @@
                     })
                 ],
                 view: new ol.View({
-                    center: ol.proj.fromLonLat([@Model.getitem.longitude, @Model.getitem.latitude]),
+                    center: ol.proj.fromLonLat([@Model.getitem.longitude.ToString(CultureInfo.CreateSpecificCulture("sv-SE")).Replace(',', '.'),
+                        @Model.getitem.latitude.ToString(CultureInfo.CreateSpecificCulture("sv-SE")).Replace(',', '.')]),
                     zoom: 16
                 })
             });
@@ -76,7 +68,8 @@
                 source: new ol.source.Vector({
                     features: [
                         new ol.Feature({
-                            geometry: new ol.geom.Point(ol.proj.fromLonLat([@Model.getitem.longitude, @Model.getitem.latitude]))
+                            geometry: new ol.geom.Point(ol.proj.fromLonLat([@Model.getitem.longitude.ToString(CultureInfo.CreateSpecificCulture("sv-SE")).Replace(',', '.'),
+                                @Model.getitem.latitude.ToString(CultureInfo.CreateSpecificCulture("sv-SE")).Replace(',', '.')]))
                         })
                     ]
                 })
@@ -106,7 +99,7 @@
                 if (map.hasFeatureAtPixel(event.pixel) === true) {
                     var coordinate = event.coordinate;
 
-                    content.innerHTML = '<b>Hello world!</b><br />I am a popup.';
+                    content.innerHTML = '<div class="btn btn-light"><b>@Model.getitem.name</b><br />@Model.getitem.adress</div>';
                     overlay.setPosition(coordinate);
                 } else {
                     overlay.setPosition(undefined);
@@ -117,6 +110,6 @@
 
 
 
-        </script>
+    </script>
 </body>
 </html>
